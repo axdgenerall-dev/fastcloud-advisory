@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fastcloud Internet | Service Advisory</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #eaf4ff 0%, #f7fbff 100%);
+    color: #15345f;
+  }
+  .header {
+    background: linear-gradient(135deg, #0649b7, #0b63d8);
+    color: white;
+    padding: 28px 24px 34px;
+    box-shadow: 0 3px 14px rgba(0,0,0,.12);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 900px;
+    margin: auto;
+  }
+  .logo {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: white;
+    color: #0755bd;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 17px;
+    border: 4px solid rgba(255,255,255,.55);
+  }
+  .brand h1 { margin: 0; font-size: 29px; letter-spacing: .5px; }
+  .brand p { margin: 5px 0 0; opacity: .9; }
+  .status {
+    margin: 25px auto 0;
+    max-width: 900px;
+    border: 2px solid rgba(255,255,255,.35);
+    border-radius: 30px;
+    padding: 12px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: rgba(0,0,0,.08);
+  }
+  .dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: #ffc400;
+    box-shadow: 0 0 0 5px rgba(255,196,0,.14);
+  }
+  main { max-width: 900px; margin: 48px auto; padding: 0 18px; }
+  .card {
+    background: white;
+    border-radius: 28px;
+    padding: 48px 42px;
+    box-shadow: 0 12px 35px rgba(29,76,130,.12);
+    border-top: 14px solid #0b58c7;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:before {
+    content: "";
+    position: absolute;
+    left: 0; top: -14px;
+    width: 150px; height: 14px;
+    background: #ffc400;
+  }
+  .icon {
+    width: 92px; height: 92px;
+    border-radius: 22px;
+    background: #edf5ff;
+    border: 2px solid #cfe1fb;
+    display: grid;
+    place-items: center;
+    font-size: 44px;
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    color: #1765bd;
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 18px;
+  }
+  h2 {
+    color: #062b67;
+    font-size: clamp(36px, 7vw, 62px);
+    line-height: 1.08;
+    margin: 24px 0;
+  }
+  .text {
+    font-size: 23px;
+    line-height: 1.65;
+    color: #53657c;
+  }
+  .notice {
+    margin-top: 34px;
+    padding: 24px 26px;
+    background: #fff9e8;
+    border: 2px solid #f3d66c;
+    border-left: 10px solid #ffc400;
+    border-radius: 18px;
+    font-size: 20px;
+    line-height: 1.55;
+    color: #574916;
+  }
+  .notice strong { display:block; margin-bottom: 8px; }
+  button {
+    margin-top: 36px;
+    border: 0;
+    background: #0752b8;
+    color: white;
+    padding: 18px 34px;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(7,82,184,.22);
+  }
+  button:active { transform: translateY(1px); }
+  .checked {
+    margin-top: 28px;
+    color: #748399;
+    font-size: 17px;
+  }
+  footer {
+    text-align:center;
+    padding: 10px 20px 45px;
+    color:#718198;
+  }
+  @media (max-width: 600px) {
+    .header { padding: 22px 16px 28px; }
+    .brand h1 { font-size: 25px; }
+    main { margin: 25px auto; padding: 0 12px; }
+    .card { padding: 35px 24px 40px; border-radius: 23px; }
+    .icon { width: 78px; height: 78px; font-size: 37px; margin-bottom: 30px; }
+    .text { font-size: 19px; }
+    .notice { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="brand">
+    <div class="logo">FC</div>
+    <div>
+      <h1>FASTCLOUD INTERNET</h1>
+      <p>Service Portal</p>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:auto;">
+    <div class="status"><span class="dot"></span> SERVICE ADVISORY</div>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <div class="icon">🔧</div>
+    <div class="eyebrow">SERVICE ADVISORY</div>
+    <h2>Fastcloud Internet is temporarily under maintenance</h2>
+
+    <div class="text">
+      We are performing essential system maintenance to improve
+      service stability. The Fastcloud service portal will be
+      available again as soon as maintenance is complete.
+    </div>
+
+    <div class="notice">
+      <strong>⚠️ Please do not refresh repeatedly or resubmit a request.</strong>
+      Your existing records and service information remain protected.
+    </div>
+
+    <button onclick="location.reload()">Try again</button>
+
+    <div class="checked">
+      Last checked: <span id="date"></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Fastcloud Internet. All rights reserved.
+</footer>
+
+<script>
+  function updateDate() {
+    const now = new Date();
+    document.getElementById("date").textContent =
+      now.toLocaleString("en-PH", {
+        month: "short", day: "numeric", year: "numeric",
+        hour: "numeric", minute: "2-digit"
+      });
+    document.getElementById("year").textContent = now.getFullYear();
+  }
+  updateDate();
+</script>
+</body>
+</html>
